@@ -4,6 +4,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as Component from './components/component';
 
+const posts = [
+  {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
+  {id: 2, title: 'Installation', content: 'You can install React from npm.'}
+];
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 function tick() {
@@ -18,6 +22,8 @@ function tick() {
       <Component.LoggingButton />
       <Component.MailBox unreadMessages={['React', 'Re: React', 'Re:Re: React']} />
       <Component.Page />
+      <Component.NumberList numbers={[1,2,3,4,5]} />
+      <Component.Blog posts={posts}/>
       {/* <MembersTable /> */}
     </React.StrictMode>
   );
