@@ -24,6 +24,8 @@ function tick() {
       <Component.Page />
       <Component.NumberList numbers={[1,2,3,4,5]} />
       <Component.Blog posts={posts}/>
+      <Component.NameForm />
+      <Component.EssayForm />
       {/* <MembersTable /> */}
     </React.StrictMode>
   );
