@@ -1,8 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-import { sum, Title } from './components/title';
-
 function App() {
   const [stateData, setData] = useState([]);
   useEffect(() => {
@@ -20,8 +18,6 @@ function App() {
   return (
     <>
     <div className="App">
-      <Title username="YJG30737" sitename="React & Flask Tutorial👌" />
-      <p>{ sum(3, 4) }</p>
       <div>
         {/* { (typeof data.users === 'undefined' ) ? (
           <p>loading...</p>

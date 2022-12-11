@@ -10,11 +10,14 @@ function tick() {
   root.render(
     <React.StrictMode>
       <App />
+      <Component.Title username="YJG30737" sitename="React & Flask Tutorial👌" />
       <Component.LoginControl />
       <Component.Clock />
       <Component.Form />
       <Component.Toggle />
       <Component.LoggingButton />
+      <Component.MailBox unreadMessages={['React', 'Re: React', 'Re:Re: React']} />
+      <Component.Page />
       {/* <MembersTable /> */}
     </React.StrictMode>
   );

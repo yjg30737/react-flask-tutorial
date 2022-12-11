@@ -1,5 +1,11 @@
 import React from "react";
 
+export class Title extends React.Component {
+    render() {
+        return <h1>{this.props.username}'s {this.props.sitename}</h1>
+    }
+}
+
 // https://reactjs.org/docs/conditional-rendering.html
 export function UserGreeting(props) {
     return <h1>Welcome back!</h1>
@@ -56,16 +62,12 @@ export class LoginControl extends React.Component {
 
     render() {
         const isLoggedIn = this.state.isLoggedIn;
-        let button;
-        if (isLoggedIn) {
-            button = <LogoutButton onClick={this.handleLogoutClick} />;
-        } else {
-            button = <LoginButton onClick={this.handleLoginClick} />;
-        }
-
         return (
             <div>
-                <Greeting isLoggedIn={isLoggedIn} />
+                {isLoggedIn
+                    ? <LogoutButton onClick={this.handleLogoutClick} />
+                    : <LoginButton onClick={this.handleLoginClick} />
+                }
             </div>
         );
     }
@@ -193,6 +195,59 @@ export class LoggingButton extends React.Component {
         <button onClick={this.handleClick}>
             Click me
         </button>
+        );
+    }
+}
+
+// https://reactjs.org/docs/conditional-rendering.html
+export function MailBox(props) {
+    const unreadMessages = props.unreadMessages;
+    return (
+        <div>
+            <h1>About mail</h1>
+            { unreadMessages.length > 0 &&
+                <h2>
+                    You have { unreadMessages.length } unread messages.
+                </h2> 
+            }
+        </div>
+    );
+}
+
+// https://reactjs.org/docs/conditional-rendering.html
+function WarningBanner(props) {
+    if(!props.warn) {
+        return null;
+    }
+
+    return (
+        <div className="warning">
+            Warning!
+        </div>
+    );
+}
+
+export class Page extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { showWarning: true };
+        this.handleToggleClick = this.handleToggleClick.bind(this);
+    }
+
+    handleToggleClick() {
+        this.setState(state => ({
+            showWarning: !state.showWarning
+        }));
+    }
+
+    render() {
+        return (
+            <div>
+                <WarningBanner warn={this.state.showWarning} />
+                <button onClick={this.handleToggleClick}>
+                    {this.state.showWarning ? 'Hide' : 'Show'}
+                </button>
+            </div>
         );
     }
 }
