@@ -3,6 +3,77 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// https://reactjs.org/docs/conditional-rendering.html
+function UserGreeting(props) {
+  return <h1>Welcome back!</h1>
+}
+
+// https://reactjs.org/docs/conditional-rendering.html
+function GuestGreeting(props) {
+  return <h1>Please sign up.</h1>
+}
+
+// https://reactjs.org/docs/conditional-rendering.html
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <UserGreeting />;
+  }
+  return <GuestGreeting />;
+}
+
+// https://reactjs.org/docs/conditional-rendering.html
+function LoginButton(props) {
+  return (
+    <button onClick={props.onClick}>
+      Login
+    </button>
+  );
+}
+
+// https://reactjs.org/docs/conditional-rendering.html
+function LogoutButton(props) {
+  return (
+    <button onClick={props.onClick}>
+      Logout
+    </button>
+  );
+}
+
+// https://reactjs.org/docs/conditional-rendering.html
+class LoginControl extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleLoginClick = this.handleLoginClick.bind(this);
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
+    this.state = { isLoggedIn: false };
+  }
+
+  handleLoginClick() {
+    this.setState({ isLoggedIn: true });
+  }
+
+  handleLogoutClick() {
+    this.setState({ isLoggedIn: false });
+  }
+
+  render() {
+    const isLoggedIn = this.state.isLoggedIn;
+    let button;
+    if (isLoggedIn) {
+      button = <LogoutButton onClick={this.handleLogoutClick} />;
+    } else {
+      button = <LoginButton onClick={this.handleLoginClick} />;
+    }
+
+    return (
+      <div>
+        <Greeting isLoggedIn={isLoggedIn} />
+      </div>
+    );
+  }
+}
+
 // https://reactjs.org/docs/components-and-props.html
 // https://reactjs.org/docs/state-and-lifecycle.html
 class Clock extends React.Component {
@@ -112,15 +183,34 @@ class Toggle extends React.Component {
   }
 }
 
+class LoggingButton extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick () {
+    console.log('this is:', this);
+  };
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        Click me
+      </button>
+    );
+  }
+}
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 function tick() {
   root.render(
     <React.StrictMode>
       <App />
+      <LoginControl />
       <Clock />
       <Form />
       <Toggle />
+      <LoggingButton />
       {/* <MembersTable /> */}
     </React.StrictMode>
   );
