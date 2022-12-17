@@ -29,6 +29,7 @@ function tick() {
       <Component.FlavorForm />
       <Component.Reservation />
       <Component.Calculator />
+      <Component.SignUpDialog />
       {/* <MembersTable /> */}
     </React.StrictMode>
   );
