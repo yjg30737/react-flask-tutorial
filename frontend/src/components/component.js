@@ -581,6 +581,7 @@ export class SignUpDialog extends React.Component {
     }
 }
 
+// https://reactjs.org/docs/thinking-in-react.html
 class ProductCategoryRow extends React.Component {
     render() {
         const category = this.props.category;
