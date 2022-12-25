@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 export class Title extends React.Component {
     render() {
@@ -108,7 +108,7 @@ export class Clock extends React.Component {
 }
   
 // https://reactjs.org/docs/state-and-lifecycle.html
-// class MembersTable extends React.Component {
+// export class MembersTable extends React.Component {
 //   constructor(props) {
 //     super(props);
 //     this.state = [{
@@ -674,10 +674,13 @@ class SearchBar extends React.Component {
     }
 
     render() {
+        const labelText = "Aria Label";
         return (
             <form>
                 <input 
-                    type="text" 
+                    type="text"
+                    aria-label={labelText}
+                    aria-required="true"
                     placeholder="Search..."
                     value={this.props.filterText}
                     onChange={this.handleFilterTextChange} 
@@ -736,6 +739,57 @@ export class FilterableProductTable extends React.Component {
                     filterText={this.state.filterText}
                     inStockOnly={this.state.inStockOnly} 
                 />
+            </div>
+        );
+    }
+}
+
+export class BlurExample extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { isOpen: false };
+        this.timeOutId = null;
+
+        this.onClickHandler = this.onClickHandler.bind(this);
+        this.onBlurHandler = this.onBlurHandler.bind(this);
+        this.onFocusHandler = this.onFocusHandler.bind(this);
+    }
+
+    onClickHandler() {
+        this.setState(currentState => ({
+            isOpen: !currentState.isOpen
+        }));
+    }
+
+    onBlurHandler() {
+        this.timeOutId = setTimeout(() => {
+            this.setState({
+                isOpen: false
+            });
+        });
+    }
+
+    onFocusHandler() {
+        clearTimeout(this.timeOutId);
+    }
+
+    render() {
+        return (
+            <div onBlur={this.onBlurHandler}
+                 onFocus={this.onFocusHandler}>
+                <button onClick={this.onClickHandler}
+                        aria-haspopup="true"
+                        aria-expanded={this.state.isOpen}>
+                    Select an option
+                </button>``
+                {this.state.isOpen && (
+                    <ul>
+                        <li>Option 1</li>
+                        <li>Option 2</li>
+                        <li>Option 3</li>
+                    </ul>
+                )}
             </div>
         );
     }
