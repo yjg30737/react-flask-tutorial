@@ -1,5 +1,5 @@
 import React from 'react';
-import { Static, Dynamic } from './components/component';
+import { Main, MainTitle } from './components/component';
 
 function App() {
   // server side information section
@@ -20,8 +20,9 @@ function App() {
   // static (client-side only)
   return (
     <div className="App">
-      <Static />
-      <Dynamic />
+      <MainTitle username="YJG30737" sitename="React & Flask Tutorial"/>
+      <hr />
+      <Main />
       {/* loading
       { (typeof data.users === 'undefined' ) ? (
         <p>loading...</p>
