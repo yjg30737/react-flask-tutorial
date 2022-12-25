@@ -1,6 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import { StaticComponent } from './components/component';
+import { Static, Dynamic } from './components/component';
 
 function App() {
   // server side information section
@@ -21,7 +20,8 @@ function App() {
   // static (client-side only)
   return (
     <div className="App">
-      <StaticComponent />
+      <Static />
+      <Dynamic />
       {/* loading
       { (typeof data.users === 'undefined' ) ? (
         <p>loading...</p>

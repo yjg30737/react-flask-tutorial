@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 export class Title extends React.Component {
     render() {
