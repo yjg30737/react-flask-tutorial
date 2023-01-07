@@ -30,3 +30,21 @@ python a.py
 ```
 npm start
 ```
+
+3. If you want to use Tailwind
+
+First you need to change the content of tailwind.config.js's content such as
+```
+content: [
+  './src/**/*.{html, js}',
+],
+```
+
+Then type below
+
+```
+npm run build:css
+```
+
+## Note
+This includes the bootstrap and tailwind css. I'm currently using bootstrap directly to the footer. 
