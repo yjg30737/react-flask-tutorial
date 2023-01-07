@@ -1,3 +1,3 @@
 export function ColumnTitle(props) {
-    return <h2 style={{ textAlign: 'center' }}>{props.columnname}</h2>
+    return <h2 class='column-title'>{props.columnname}</h2>
 }

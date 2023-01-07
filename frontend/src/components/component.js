@@ -21,44 +21,50 @@ export function Static() {
     ];
 
     return (
-        <div id="static">
+        <div id="static" class="column">
             <CommonComponent.ColumnTitle columnname="Static" />
-            <StaticComponent.LoginControl />
-            <StaticComponent.Clock />
-            <StaticComponent.Form />
-            <StaticComponent.Toggle />
-            <StaticComponent.LoggingButton />
-            <StaticComponent.MailBox unreadMessages={['React', 'Re: React', 'Re:Re: React']} />
-            <StaticComponent.Page />
-            <StaticComponent.NumberList numbers={[1,2,3,4,5]} />
-            <StaticComponent.Blog posts={posts}/>
-            <StaticComponent.NameForm />
-            <StaticComponent.EssayForm />
-            <StaticComponent.FlavorForm />
-            <StaticComponent.Reservation />
-            <StaticComponent.Calculator />
-            <StaticComponent.SignUpDialog />
-            <StaticComponent.FilterableProductTable products={PRODUCTS} />
-            {/* <Component.MembersTable /> */}
-            <StaticComponent.BlurExample />
+            <div class="column-body">
+                <StaticComponent.LoginControl />
+                <StaticComponent.Clock />
+                <StaticComponent.Form />
+                <StaticComponent.Toggle />
+                <StaticComponent.LoggingButton />
+                <StaticComponent.MailBox unreadMessages={['React', 'Re: React', 'Re:Re: React']} />
+                <StaticComponent.Page />
+                <StaticComponent.NumberList numbers={[1,2,3,4,5]} />
+                <StaticComponent.Blog posts={posts}/>
+                <StaticComponent.NameForm />
+                <StaticComponent.EssayForm />
+                <StaticComponent.FlavorForm />
+                <StaticComponent.Reservation />
+                <StaticComponent.Calculator />
+                <StaticComponent.SignUpDialog />
+                <StaticComponent.FilterableProductTable products={PRODUCTS} />
+                {/* <Component.MembersTable /> */}
+                <StaticComponent.BlurExample />
+            </div>
         </div>
     )
 }
 
 export function Dynamic() {
     return (
-        <div id="dynamic">
+        <div id="dynamic" class="column">
             <CommonComponent.ColumnTitle columnname="Dynamic" />
-            <DynamicComponent.UsersList />
+            <div class="column-body">
+                <DynamicComponent.UsersList />
+            </div>
         </div>
     );
 }
 
 export function GridLayout() {
     return (
-        <div id="grid">
+        <div id="grid" class="column">
             <CommonComponent.ColumnTitle columnname='GridLayout' />
-            <GridLayoutComponent.BasicExample />
+            <div class="column-body">
+                <GridLayoutComponent.BasicExample />
+            </div>
         </div>
     )
 }
