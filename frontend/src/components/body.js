@@ -21,9 +21,9 @@ export function Static() {
     ];
 
     return (
-        <div id="static" class="column">
+        <div id="static" className="column">
             <CommonComponent.ColumnTitle columnname="Static" />
-            <div class="column-body">
+            <div className="column-body">
                 <StaticComponent.LoginControl />
                 <StaticComponent.Clock />
                 <StaticComponent.Form />
@@ -49,9 +49,9 @@ export function Static() {
 
 export function Dynamic() {
     return (
-        <div id="dynamic" class="column">
+        <div id="dynamic" className="column">
             <CommonComponent.ColumnTitle columnname="Dynamic" />
-            <div class="column-body">
+            <div className="column-body">
                 <DynamicComponent.UsersList />
             </div>
         </div>
@@ -60,9 +60,9 @@ export function Dynamic() {
 
 export function GridLayout() {
     return (
-        <div id="grid" class="column">
+        <div id="grid" className="column">
             <CommonComponent.ColumnTitle columnname='GridLayout' />
-            <div class="column-body">
+            <div className="column-body">
                 <GridLayoutComponent.BasicExample />
             </div>
         </div>

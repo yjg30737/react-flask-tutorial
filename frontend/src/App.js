@@ -1,5 +1,7 @@
 import React from 'react';
-import { Main, MainTitle } from './components/component';
+import { Header } from './components/header';
+import { Main } from './components/body';
+import { Footer } from './components/footer';
 
 function App() {
   // server side information section
@@ -20,17 +22,9 @@ function App() {
   // static (client-side only)
   return (
     <div className="App">
-      <MainTitle username="YJG30737" sitename="React & Flask Tutorial"/>
-      <hr />
+      <Header username="YJG30737" sitename="React & Flask Tutorial"/>
       <Main />
-      {/* loading
-      { (typeof data.users === 'undefined' ) ? (
-        <p>loading...</p>
-      ) : (
-        data.users.map((u) => <p key={u.id}>{u.name}</p>)
-      ) } */}
-      {/* not loading
-      { stateData.users && stateData.users.map((u) => <p key={u.id}>{u.name}</p>) } */}
+      <Footer />
     </div>
   );
 }

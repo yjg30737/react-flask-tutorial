@@ -1,4 +1,17 @@
+#main.grid {
+    display: grid;
+    grid-template-columns: 70% 15% 15%;
+    resize: horizontal;
+    overflow: auto;
+}
 
+#main.grid > column {
+    display: grid;
+    min-width: 10%;
+    max-width: 70%;
+    resize: horizontal;
+    overflow: auto;
+}
 
 .column {
     border: 1px solid black;
