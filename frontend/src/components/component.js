@@ -3,6 +3,7 @@ import * as CommonComponent from './common/component';
 import * as StaticComponent from './static/component';
 import * as DynamicComponent from './dynamic/component';
 import * as GridLayoutComponent from './gridlayout/component';
+import './component.css';
 
 export function Static() {
     const posts = [
@@ -20,7 +21,7 @@ export function Static() {
     ];
 
     return (
-        <div id="static" style={{ border: '1px solid black' }}>
+        <div id="static">
             <CommonComponent.ColumnTitle columnname="Static" />
             <StaticComponent.LoginControl />
             <StaticComponent.Clock />
@@ -46,7 +47,7 @@ export function Static() {
 
 export function Dynamic() {
     return (
-        <div id="dynamic" style={{ border: '1px solid black' }}>
+        <div id="dynamic">
             <CommonComponent.ColumnTitle columnname="Dynamic" />
             <DynamicComponent.UsersList />
         </div>
@@ -55,7 +56,7 @@ export function Dynamic() {
 
 export function GridLayout() {
     return (
-        <div id="grid" style={{ border: '1px solid black' }}>
+        <div id="grid">
             <CommonComponent.ColumnTitle columnname='GridLayout' />
             <GridLayoutComponent.BasicExample />
         </div>
@@ -67,7 +68,7 @@ export function MainTitle(props) {
 
 export function Main() {
     return (
-        <div id="main" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)' }}>
+        <div id="main" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', }}>
             <Static />
             <Dynamic />
             <GridLayout />
