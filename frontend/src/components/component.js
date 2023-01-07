@@ -67,10 +67,10 @@ export function MainTitle(props) {
 
 export function Main() {
     return (
-        <div id="main" style={{ display: 'flex', flexDirection: 'row' }}>
-            <Static style={{ flex: '1', width: '33%' }} />
-            <Dynamic style={{ flex: '1', width: '33%' }} />
-            <GridLayout style={{ flex: '1', width: '33%' }} />
+        <div id="main" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)' }}>
+            <Static />
+            <Dynamic />
+            <GridLayout />
         </div>
     )
 }
