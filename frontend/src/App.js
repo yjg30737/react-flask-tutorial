@@ -2,6 +2,8 @@ import React from 'react';
 import { Header } from './components/header';
 import { Main } from './components/body';
 import { Footer } from './components/footer';
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 function App() {
   // server side information section

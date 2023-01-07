@@ -68,9 +68,6 @@ export function GridLayout() {
         </div>
     )
 }
-export function MainTitle(props) {
-    return <h1 style={{ textAlign: 'center' }}>{props.username}'s {props.sitename}</h1>
-}
 
 export function Main() {
     return (
