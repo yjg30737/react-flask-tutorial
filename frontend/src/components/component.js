@@ -2,6 +2,7 @@ import React from "react";
 import * as CommonComponent from './common/component';
 import * as StaticComponent from './static/component';
 import * as DynamicComponent from './dynamic/component';
+import * as GridLayoutComponent from './gridlayout/component';
 
 export function Static() {
     const posts = [
@@ -19,7 +20,7 @@ export function Static() {
     ];
 
     return (
-        <div id="static">
+        <div id="static" style={{ border: '1px solid black' }}>
             <CommonComponent.ColumnTitle columnname="Static" />
             <StaticComponent.LoginControl />
             <StaticComponent.Clock />
@@ -45,13 +46,21 @@ export function Static() {
 
 export function Dynamic() {
     return (
-        <div id="dynamic">
+        <div id="dynamic" style={{ border: '1px solid black' }}>
             <CommonComponent.ColumnTitle columnname="Dynamic" />
             <DynamicComponent.UsersList />
         </div>
     );
 }
 
+export function GridLayout() {
+    return (
+        <div id="grid" style={{ border: '1px solid black' }}>
+            <CommonComponent.ColumnTitle columnname='GridLayout' />
+            <GridLayoutComponent.BasicExample />
+        </div>
+    )
+}
 export function MainTitle(props) {
     return <h1 style={{ textAlign: 'center' }}>{props.username}'s {props.sitename}</h1>
 }
@@ -59,8 +68,9 @@ export function MainTitle(props) {
 export function Main() {
     return (
         <div id="main" style={{ display: 'flex', flexDirection: 'row' }}>
-            <Static style={{ flex: '1', width: '50%' }} />
-            <Dynamic style={{ flex: '1', width: '50%' }} />
+            <Static style={{ flex: '1', width: '33%' }} />
+            <Dynamic style={{ flex: '1', width: '33%' }} />
+            <GridLayout style={{ flex: '1', width: '33%' }} />
         </div>
     )
 }
